@@ -67,17 +67,22 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-                <configuration>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                    <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Tests.java</include>
-                        <include>**/*TestCase.java</include>
+                        <include>**/TestRunner.java</include>
                     </includes>
+                    <properties>
+                        <configurationParameters>
+                            cucumber.publish.enabled=true
+                            cucumber.publish.quiet=true
+                        </configurationParameters>
+                    </properties>
                 </configuration>
             </plugin>
             <!-- Exec Maven Plugin for running Playwright install -->
@@ -96,12 +101,14 @@
                             <mainClass>com.microsoft.playwright.CLI</mainClass>
                             <arguments>
                                 <argument>install</argument>
-                                <argument>chromium</argument>
+                                <argument>--with-deps</argument>
                             </arguments>
+                            <skip>false</skip>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-        </plugins>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
