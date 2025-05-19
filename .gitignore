@@ -1,0 +1,44 @@
+# Maven output
+target/
+
+# Eclipse / IntelliJ IDEA
+*.iml
+.idea/
+*.ipr
+*.iws
+*.class
+
+# VS Code
+.vscode/
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Playwright downloads and traces
+playwright-report/
+test-results/
+*.trace.zip
+trace.zip
+videos/
+screenshots/
+
+# Node (if using Playwright via npm for CLI scripts, optional)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Cucumber JSON/HTML reports
+cucumber-report/
+cucumber.json
+*.html
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Misc
+.env
