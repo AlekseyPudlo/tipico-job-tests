@@ -26,11 +26,6 @@ trace.zip
 videos/
 screenshots/
 
-# Node (if using Playwright via npm for CLI scripts, optional)
-node_modules/
-package-lock.json
-yarn.lock
-
 # Cucumber JSON/HTML reports
 cucumber-report/
 cucumber.json
